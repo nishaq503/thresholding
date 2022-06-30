@@ -1,13 +1,29 @@
 import numpy
 
 
-def find_threshold(values: numpy.ndarray, num_bins: int = 256) -> float:
+def find_threshold(
+        values: numpy.ndarray,
+        num_bins: int = 256,
+        normalize_histogram: bool = False,
+) -> float:
+    """ Computes the otsu threshold for the given values.
+
+    Args:
+        values: 1d array of values
+        num_bins: to use for a histogram
+        normalize_histogram: Whether to normalize the histogram by max
+         frequency.
+
+    Returns:
+        The calculated threshold value.
+    """
+
     # Get the image histogram
     hist, bin_edges = numpy.histogram(values, bins=num_bins)
 
     # Get normalized histogram if it is required
-    # if is_normalized:
-    # hist = numpy.divide(hist.ravel(), hist.max(initial=0))
+    if normalize_histogram:
+        hist = numpy.divide(hist.ravel(), hist.max(initial=0))
 
     # Calculate centers of bins
     bin_mids = (bin_edges[:-1] + bin_edges[1:]) / 2.
@@ -27,4 +43,4 @@ def find_threshold(values: numpy.ndarray, num_bins: int = 256) -> float:
     index_of_max_var = numpy.argmax(inter_class_variance)
 
     threshold = bin_mids[:-1][index_of_max_var]
-    return threshold
+    return float(threshold)
