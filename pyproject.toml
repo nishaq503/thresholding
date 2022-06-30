@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "thresholding"
+version = "0.1.0"
+description = "Various thresholding algorithms for histograms"
+authors = ["Najib Ishaq <najib_ishaq@zoho.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+poetry = "^1.1.13"
+numpy = "^1.23"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
