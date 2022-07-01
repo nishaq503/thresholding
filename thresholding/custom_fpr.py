@@ -21,6 +21,9 @@ def find_threshold(
     Returns:
         The computed threshold value.
     """
+    if not (0 < false_positive_rate < 1):
+        raise ValueError(f'`false_positive_rate` mut be in the range (0, 1). Got {false_positive_rate:.2e} instead.')
+
     mu = float(numpy.mean(values))
     sigma = float(numpy.mean(values))
 
