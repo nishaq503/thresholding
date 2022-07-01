@@ -6,9 +6,9 @@ authors = ["Najib Ishaq <najib_ishaq@zoho.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.7"
 poetry = "^1.1.13"
-numpy = "^1.23"
+numpy = "^1.21"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
