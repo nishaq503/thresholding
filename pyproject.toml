@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "thresholding"
-version = "0.1.1"
+version = "0.1.2"
 description = "Various thresholding algorithms for histograms"
 authors = ["Najib Ishaq <najib_ishaq@zoho.com>"]
 license = "MIT"

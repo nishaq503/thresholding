@@ -25,7 +25,7 @@ def find_threshold(
         raise ValueError(f'`false_positive_rate` mut be in the range (0, 1). Got {false_positive_rate:.2e} instead.')
 
     mu = float(numpy.mean(values))
-    sigma = float(numpy.mean(values))
+    sigma = float(numpy.std(values))
 
     distribution = statistics.NormalDist(mu, sigma)
     threshold = distribution.inv_cdf(1 - false_positive_rate)
