@@ -11,7 +11,7 @@ Various thresholding algorithms for histograms.
 
 * Create a virtual environment with `Python>=3.7`.
 * Update `pip`, `setuptools`, and `wheel`.
-* Install the package:
+* Install the `thresholding` package:
 
 ```bash
 pip install git+https://github.com/nishaq503/thresholding.git@rust
@@ -23,16 +23,14 @@ pip install git+https://github.com/nishaq503/thresholding.git@rust
 
 ```python
 import numpy
-from thresholding import custom_fpr
+import thresholding
 
 # values drawn from N(100, 10)
 values = numpy.random.randn(10_000) * 10 + 100
+n = 4
 
-false_positive_rate = 0.1
-
-threshold = custom_fpr.find_threshold(values, false_positive_rate)
-
-print(f'{threshold:.2e}')
+threshold = thresholding.otsu(values, n)
+print(f'{threshold:.2e}')  # 1.00e+02
 ```
 
 ### For Developers

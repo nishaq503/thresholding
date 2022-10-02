@@ -13,6 +13,6 @@ pub fn find_threshold(
     n: f64,
 ) -> f64 {
     let mu = utils::mu(values);
-    let sigma = utils::sd(values, mu);
+    let sigma = utils::sigma(values, mu);
     mu + n * sigma
 }
