@@ -2,6 +2,21 @@
 
 Various thresholding algorithms for histograms.
 
+## Requirements
+
+* Python >= 3.7
+* numpy >= 1.21
+
+## Installation
+
+* Create a virtual environment with `Python>=3.7`.
+* Update `pip`, `setuptools`, and `wheel`.
+* Install the package:
+
+```bash
+pip install git+https://github.com/nishaq503/thresholding.git@rust
+```
+
 ## Usage
 
 ### For Users
