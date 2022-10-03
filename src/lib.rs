@@ -7,6 +7,7 @@ use numpy::PyReadonlyArray1;
 use pyo3::prelude::*;
 
 #[pyfunction]
+#[pyo3(name = "n_sigma")]
 fn n_sigma_threshold(values: PyReadonlyArray1<f64>, n: f64) -> PyResult<f64> {
     Ok(n_sigma::find_threshold(values.as_array().as_slice().unwrap(), n))
 }
